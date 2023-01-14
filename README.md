@@ -132,3 +132,33 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <h2>Adobe Color</h2>
 <p>Outro site com muitas paletas de cores legais e personalizáveis é o Adobe Color. Nele você vê uma roda de cores que pode ser usada para gerar paleta de cores.</p>
 <p>Já escolheu as cores e fontes? Então vamos estilzar nosso projeto!</p>
+
+>06. Aplicando cores e posicionando elementos
+
+<p>[00:00] Agora que já escolhemos as cores da nossa aplicação, e já selecionamos a fonte que queremos utilizar, vamos aplicar esses recursos no nosso código, para que ele fique bem bonito, o nosso jogo fique bem maravilhoso. Vamos lá.</p>
+
+<p>[00:11] Primeira coisa que eu vou fazer, é selecionar a tag body {, para aplicarmos essas nossas cores. E vamos começar com a cor de fundo, background color, e repara que eu digitei “back”, e não apareceu. Eu estou utilizando uma outra extensão do PostCSS, não é o que eu quero, eu quero utilizar o CSS, então, colocamos o CSS e ele vai nos auxiliar a escrever algumas tags do CSS.</p>
+
+<p>[00:36] Então, vamos lá, primeira coisa, background-color: var(--bg-color), e se voltarmos na nossa página, já tem o azul que eu selecionei.</p>
+
+<p>[00:50] Além do background color, eu vou precisar de uma cor de fundo para os nossos códigos, para as nossas cores, dos nossos textos, então, vou colocar color: var(--primary-color), e se voltamos na nossa página, já está com as cores diferentes também.</p>
+
+<p>[01:10] Então, eu quero que ele tenha o tamanho mínimo da nossa janela, então, vou colocar min-height: 100vh;. E eu quero também posicionar todos os meus elementos no centro, repara que todos eles estão no canto, e eu quero colocar no centro da nossa tela. Então, para isso, vou utilizar o display: flex;, para nos auxiliar nessa tarefa. Vou colocar uma direção flex-direction: column;, e vou utilizar align-items: center;, e também o justify-content: center;.</p>
+
+<p>[01:54] Vamos dar uma olhada para ver como está ficando, e está ficando melhor, já não está no canto tudo esmagado. Vamos colocar também o texto sempre centralizado. Então, text-align: center, para garantirmos que tudo vai estar no centro. Vou usar um margin: 0, e para finalizar, vamos colocar a nossa fonte, font-family: var(--font-family). E voltamos na nossa aplicação, e já aparece com o layout bem mais agradável.</p>
+
+<p>[02:29] Agora que já temos as nossas cores e as nossas fontes, vamos começar a estilizar os nossos próximos passos da nossa aplicação. Vou começar com h1, que é esse “Acerte o número secreto”. Então, vou selecioná-lo, h1 {, vou colocar um font-size 5em;, e vamos voltar na aplicação, e está muito grande. Vou colocar um pouco menor, para 4em, vamos ver se fica melhor. E está melhor.</p>
+
+<p>[03:01] Vou colocar um font-size nesse “O número secreto está entre 0 e 100”. Se voltarmos no nosso código, vemos que ele é o nosso h3, então, vamos lá. Vou dar um “Enter”, h3 {, e embaixo font-size: 2em, para vermos como fica. Como eu estava com o zoom na tela, eu vou aumentar o nosso h1 para 5em.</p>
+
+<p>[03:47] Se percebermos, esse “O número secreto está entre 0 e 100” está bem grudado, vamos dar alguma margem. Então, vou colocar margin=top: 20px, para ela afastar um pouco.</p>
+
+<p>[04:02] Vamos ver o que falta estilizarmos. Esse “Você disse: 20” e “O número secreto é maior ou menor”, precisamos dar uma mexida neles também. Então, temos uma classe mensagem, vamos mexer nela no nosso CSS. Então, vou criar .mensagem {, e embaixo font-size: 1.5em;, e vou colocar também uma margem superior, para ele não ficar tão grudado, de 40px, então margin-top: 40px, só para vermos como fica.</p>
+
+<p>[04:39] Já dá para ter uma visualização melhor. O que eu quero fazer agora, é colocar uma borda no número. A mensagem que a pessoa fala ficar dentro de um quadrado. Então, vamos fazer isso. No nosso HTML colocamos uma classe chamada box, vamos pegar essa nossa classe. Então, vou colocar .box {, na linha 36, e vamos começar a estilizá-la na linha 37, então, ela vai ter uma borda. Aliás, tem um artigo muito legal sobre borda com CSS, que eu vou deixar nas atividades do “Para saber mais”. Então, vou colocar border: 2px solid var(--primary-color), vou passar uma cor para ele também. Vamos ver.</p>
+
+<p>[05:37] Ficou um quadrado pegando tudo que está em volta, não é isso que eu quero, vamos colocar um display para ele, um display: inline-block, e já deu um espaço para colocarmos todo o conteúdo dentro dessa nossa caixa. Vou colocar uma font-size: 4em, porque queremos dar destaque para esse número que a pessoa vai falar.</p>
+<p>[05:53] Só que se você observar, repara que ele está bem grudado dos lados. Vamos arrumar esse padding dele. Então padding: 10px;, e já vou colocar uma margin: 20px;. E se voltamos para a nossa aplicação, ficou legal.</p>
+
+<p>[06:22] E ficou legal, gostei. Esse layout é suficiente para o queremos fazer. Então, criamos o HTML do zero, criou o CSS, importou cores, importou a nossa fonte, e agora, vamos partir para o JavaScript.</p>
+
