@@ -162,3 +162,10 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[06:22] E ficou legal, gostei. Esse layout é suficiente para o queremos fazer. Então, criamos o HTML do zero, criou o CSS, importou cores, importou a nossa fonte, e agora, vamos partir para o JavaScript.</p>
 
+>08. Para saber mais: bordas CSS
+
+<p>Durante a aula, usamos a propriedade CSS chamada border, para adicionar a borda em volta de um elemento.</p>
+
+<p>Essa propriedade pode ser usada para definir os valores de largura da borda, estilo da borda e cor da borda.</p>
+
+<p>E caso você queira saber mais sobre bordas CSS, nós temos o artigo “CSS Border: estilizando com bordas seus elementos CSS” e o Alura+ de mesmo nome feitos pelo instrutor Luan Alves.</p>
