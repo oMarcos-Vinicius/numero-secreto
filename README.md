@@ -169,3 +169,35 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>Essa propriedade pode ser usada para definir os valores de largura da borda, estilo da borda e cor da borda.</p>
 
 <p>E caso você queira saber mais sobre bordas CSS, nós temos o artigo “CSS Border: estilizando com bordas seus elementos CSS” e o Alura+ de mesmo nome feitos pelo instrutor Luan Alves.</p>
+
+<h1>Módulo 02. Aplicando a Função Math.random</h1>
+
+>02. Numero aleatório com Math.random
+
+<p>[00:00] Agora que já aplicamos fontes e alteramos os estilos da nossa aplicação, do nosso jogo, eu quero começar a dar vida para ele com JavaScript. Vamos lá?</p>
+
+<p>[00:11] Então, voltando no nosso código, eu quero criar uma pasta para manter todos os nossos códigos JS. Então, eu vou clicar no segundo ícone de pastas, e vou escrever “app”, e vou criar o nosso primeiro arquivo JavaScript. Esse primeiro arquivo, eu quero manter todo o nosso código relacionado ao sorteio dos números. Então, para não termos um arquivo JavaScript só, muito grande, com muitas linhas, para dar difícil manutenção, ou pensando até no futuro, outras pessoas vão trabalhar nesse projeto, eu quero dividir essa aplicação em alguns arquivos do JavaScript separados.</p>
+
+<p>[00:45] Então, o primeiro vai ser para sortear um número, vou escrever “sortearNumero.js”, e temos o nosso primeiro arquivo. Para conseguirmos linkar o nosso projeto, que é HTML CSS, com esse arquivo JavaScript, vamos precisar ir na nossa “index.html”, na linha 23, e vou escrever script src=”app/sortearNumero.js”>.</p>
+
+<p>[01:14] Se eu vou no “sortearNumero.js”, e coloco cl, e dou um “enter”, ele abre o console.log, e eu vou escrever console.log(‘estou aqui’). Vou na nossa aplicação, clicar com o botão direito em “inspecionar”, e repara que se eu for no console, vai aparecer a mensagem “estou aqui” no nosso console.</p>
+
+<p>[01:33] Eu quero sortear um número secreto, e tem um ponto muito interessante que eu quero trabalhar junto com vocês. Como conseguimos sortear um número secreto que seja de verdade aleatório. Eu não quero escolher um número, vou jogar com o meu irmão, com a minha prima, com a minha irmã, e de repente, aparece um número que eu já sei qual é, e eu vou sempre ganhar, não é isso.</p>
+
+<p>[01:56] Toda vez que eu atualizar a página, eu quero que seja de verdade um número que o computador vai selecionar, um número secreto que ele vai gerar para nós. Para isso, tem uma função no JavaScript chamada Math Random, vamos pesquisa-la. E clicando no primeiro link do “developer.mozilla”, ele nos diz que a função Math.random() retorna um número pseudo-aleatório.</p>
+
+<p>[02:25] Por que ele fala pseudo-aleatório? Porque ele utiliza alguns recursos do computador, para conseguir gerar esse número. Não é totalmente aleatório, ele usa o timer, usa o delta, um monte de coisa maluca, que não faz sentido para nós agora, só que queremos um número que seja pseudo-aleatório.</p>
+
+<p>[02:41] Então, ele fala que o Math.random() gera um número pseudo-aleatório no intervalo de 0 e 1, ou seja, de 0 (inclusivo), mas não incluindo o 1. Esse 0 vai incluir, então, ele pode ser de 0 a alguma coisa, só que o 1 ele não vai, então, ele vai de 0. um monte de números, até deixar o 1 de fora, exclusivo. Vamos ver isso na prática.</p>
+
+<p>[03:06] No console.log, eu quero rodar alguns códigos com você, para entendermos. Então, se eu digitar Math.random(), coloco abre e fecha parênteses porque é uma função, quando eu ou um “Enter” nisso, ele gerou um número 0.9652640 e vários números, se eu fizer de novo, ele gera outro número. E temos um monte de números depois do ponto decimal. Então, se eu fizer um Math.random() * 10, ele vai gerar um número entre 0 e 9, nunca vai aparecer o 10, porque o número 1 seria exclusivo.</p>
+
+<p>[03:46] Mas eu quero um número entre 0 e 100, por exemplo. Se eu colocar 0 e 100, ele vai gerar um número, repara que está aparecendo 94, 26, 80, 89, 3, 71, só que eu não quero toda essa parte decimal. Depois do ponto, o resto não faz sentido para mim. Então, eu vou usar o Math.random(), e vou transformar esse número que ele gerou em um número inteiro. Então, vou fazer parseInt(Math.random() * 100), e agora temos 23, 33, 40, 95, 52, 31 e assim por diante. Isso fica muito legal, quero usar isso.</p>
+
+<p>[04:32] Só que temos um ponto também, repara que ele vai gerar um número entre 0 e 99, para eu conseguir de fato um número até 101, eu posso colocar mais 1. Mas não vamos entrar nesse problema agora, porque essa manipulação do menor valor e do maior valor, vamos tratar com bastante carinho na sequência.</p>
+
+<p>[04:49] Então, vamos gerar só esse número aleatório, para ver se está dando certo. Então, vou criar uma constante no nosso “sortearNumero.js”, que vou chamar de const numeroSecreto = gerarNumeroAleatorio(). E agora, eu vou criar essa nossa função, então vou escrever function gerarNumeroAleatorio() {, não vou passar parâmetro, e o que eu quero fazer, é retornar aquele conteúdo que tínhamos, return parseInt(MAth.random() * 100), e quero exibir esse número aleatório no console, console.log(numeroSecreto).</p>
+
+<p>[05:43] Vamos voltar no nosso código, e só de atualizar a página, já aparece 47, eu atualizo de novo, e aparece 26, 86, só que podemos passar uma mensagem, para ficar melhor. Então, falar console.log(‘Número Secreto:’, numeroSecreto), e aparece “Número Secreto: 97”, 91, 73, 27.</p>
+
+<p>[06:08] Está do jeito que eu queria. O que eu quero fazer na sequência, é de alguma forma conseguir manipular qual vai ser o menor valor, e qual vai ser o maior valor que utilizamos nesse nosso span. E colocar esses valores de maior e menor, para que sejam exibidos na tela do nosso projeto.</p>
