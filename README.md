@@ -203,3 +203,27 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[05:43] Vamos voltar no nosso código, e só de atualizar a página, já aparece 47, eu atualizo de novo, e aparece 26, 86, só que podemos passar uma mensagem, para ficar melhor. Então, falar console.log(‘Número Secreto:’, numeroSecreto), e aparece “Número Secreto: 97”, 91, 73, 27.</p>
 
 <p>[06:08] Está do jeito que eu queria. O que eu quero fazer na sequência, é de alguma forma conseguir manipular qual vai ser o menor valor, e qual vai ser o maior valor que utilizamos nesse nosso span. E colocar esses valores de maior e menor, para que sejam exibidos na tela do nosso projeto.</p>
+
+<h2>03. Manipulando menor e maior valor</h2>
+
+<p>[00:00] Na nossa aplicação vamos ter um número secreto entre 0 e 100, só que eu quero que esse valor seja facilmente manipulado. E conforme alteramos esse valor do lado do JavaScript, ele altere na aplicação também, e ele faça o sorteio com base nesses valores que estamos selecionando.</p>
+
+<p>[00:18] Para isso, eu vou criar uma constante const menorValor = 1, e outra const maiorValor = 100, por exemplo. Então, eu quero alterar esses valores, e ele já alterar esses valores que estão aparecendo na tela da aplicação.</p>
+
+<p>[00:43] Só que antes, temos que pensar que quando fizermos o sorteio do número maior ou menor, esse número vai precisar estar dentro desses valores que colocamos. Por exemplo, se eu coloco de 1 a 10, eu quero que o número secreto seja até o valor entre 1 e 10, então, vamos precisar alterar, no lugar de multiplicar por 100, vamos multiplicar pelo maior valor, então return parseInt(Math.random() * maiorValor).</p>
+
+<p>[01:06] Só que eu quero que seja o maior valor, e eu quero que esse maior valor seja inclusivo, ou seja, quando formos sortear um número entre 1 e 10, eu quero que realmente seja 1 e 10. E se eu deixar o maior valor só multiplicando Math.random(), não vamos ver o último valor inclusivo.</p>
+
+<p>[01:25] Então, eu vou colocar return parseInt(MAth.random() * maiorValor + 1). Agora, sempre vamos ter um número entre 1 e 10 para conseguir fazer essa conta.</p>
+
+<p>[01:34] Então, se eu mudar, por exemplo, para 1000, ele vai fazer o sorteio do maior valor até mil. Repara que já alterou para 708, 895, 380. Só que temos um problema, eu alterei no código entre 1 e 1000, e na tela da aplicação, ele está mostrando entre 0 e 100, não é bem isso que eu quero. Eu quero que esse menorValor e maiorValor sejam exibidos na tela. Como vamos fazer isso?</p>
+
+<p>[01:57] Vamos fazer uma manipulação buscando esses elementos. Se observarmos na nossa “index”, temos um span com ID do menor valor, que é zero, e o maior valor que é 100. Vamos alterar isso. Então, primeira coisa, vou criar uma constante const elementoMenorValor = document.getElementById(‘menor-valor’). E eu quero alterar o conteúdo dessa tag.</p>
+
+<p>[02:36] Então, vou pegar elementoMenorValor.innerHTML = menorValor. Se eu fizer isso, ele já alterou o 1, mas ele não alterou o 100, por exemplo. Então, se eu alterar para 10, por exemplo, e ele vai alterar para 10 também. Isso que eu quero. Só que eu quero esse mesmo comportamento para o maior valor. Então, vamos lá, const elementoMaiorValor = document.getElementById(‘maior-valor’), se formos na “index”, temos o maior valor também como um span.</p>
+
+<p>[03:17] Então, vou fazer um processo bem parecido, vou pegar elementoMaiorValor.innerHTML = maiorValor, dessa forma, ele vai colocar entre 1 e 100, entre 1 e 1000. Se eu colocar, por exemplo, um número entre 50 e 5500, ele já vai alterar, e isso está muito legal.</p>
+
+<p>[03:42] E se observarmos, repara que o valor sorteado já vai estar nesse range também. Eu vou salvar entre 100 e 5500, e vou alterar, eu quero entre 1 e 1000, por exemplo, e o range está em 516, 36, 171. Conseguimos fazer com que esse número de maior valor e menor valor seja modificado, com base nessas nossas duas variáveis.</p>
+
+<p>[04:09] Nosso próximo desafio é conseguir manipular o chute da pessoa. E não vamos utilizar um input, vamos utilizar reconhecimento de fala. E é isso que vamos aprender na sequência</p>.
