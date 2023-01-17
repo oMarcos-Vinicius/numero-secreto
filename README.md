@@ -3,7 +3,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <h1>Módulo 01: Aplicando estilos no JavaScript</h1>
 
->01. Apresentação
+<h2>01. Apresentação</h2>
 <p>[00:00] Guilherme: Olá, meu nome é Guilherme Lima, e eu serei o seu instrutor neste curso de reconhecimento de voz com JavaScript. E para isso, para mostrar o que vamos construir nesse jogo, eu tenho a presença da Moni. Oi, Moni, tudo bem?</p>
 
 <p>[00:13] Moni: Olá, gente, olá, estudante. Olá, Gui. Hoje que vamos tirar uma luta de quem acerta o número secreto.</p>
@@ -40,7 +40,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[02:43] Guilherme: Moni, muito obrigado. E eu te espero no próximo vídeo.</p>
 
->02. Preparando o ambiente
+<h2>02. Preparando o ambiente</h2>
 
 <p>É muito bom receber você neste curso de reconhecimento de voz com JavaScript.</p>
 
@@ -61,7 +61,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
     :)
 </p>
 
->03. Iniciando o projeto
+<h2>03. Iniciando o projeto</h2>
 
 <p>[00:00] Vamos iniciar os nossos estudos? Vamos começar o nosso projeto do zero. Vou criar uma pasta, clicando com o botão direito e selecionando “Nova pasta”, e vou chamar essa pasta de “numero-secreto”. Vou usar o Visual Studio Code para manipular, escrever todo o nosso código, e vou abrir essa pasta.</p>
 
@@ -101,7 +101,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[07:41] Ficou legal, acho que a estrutura da nossa aplicação está legal, só que o nosso projeto está bem feio. Na sequência, vamos deixar esse projeto com uma cara bem mais bonita</p>
 
->04. Escolhendo fontes e cores
+<h2>04. Escolhendo fontes e cores</h2>
 <p>[00:00] Nosso projeto está bem simples na parte visual. E antes de estilizarmos ele todo, eu quero escolher uma fonte diferente, e quais cores eu vou usar nesse projeto.</p>
 
 <p>[00:10] Para isso, eu vou no Google Fonts, “fonts.google.com”, e vou pesquisar uma fonte, e eu quero que você escolha a fonte que você achar legal para esse projeto. E você pode escolher a fonte que você quiser, você pode customizar o seu projeto da forma que você achar que vai ficar bonito.</p>
@@ -125,15 +125,17 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 >05. Para saber mais: estilos
 <p>Nosso primeiro desafio foi estruturar e estilizar o projeto com fontes e cores personalizados e, para isso, utilizamos os seguintes sites:</p>
 
-<h2>Google fonts</h2>
+>Google fonts
 <p>O Google Fonts uma importante ferramenta para quem busca facilidade na hora de criar ou editar um website, em relação às fontes do texto, que conta com mais de 800 fontes livres licenciadas.</p>
-<h2>Cores</h2>
+
+>Cores
 <p>O Color Hunt uma coleção aberta de paletas de cores. Essa ferramenta atende a milhares de esquemas de cores para muitos propósitos diferentes de design e arte. As paletas de cores são usadas por desenvolvedores web, artistas, ilustradores e pessoas com áreas de atuação diferentes.</p>
-<h2>Adobe Color</h2>
+
+> Adobe Color
 <p>Outro site com muitas paletas de cores legais e personalizáveis é o Adobe Color. Nele você vê uma roda de cores que pode ser usada para gerar paleta de cores.</p>
 <p>Já escolheu as cores e fontes? Então vamos estilzar nosso projeto!</p>
 
->06. Aplicando cores e posicionando elementos
+<h2>06. Aplicando cores e posicionando elementos</h2>
 
 <p>[00:00] Agora que já escolhemos as cores da nossa aplicação, e já selecionamos a fonte que queremos utilizar, vamos aplicar esses recursos no nosso código, para que ele fique bem bonito, o nosso jogo fique bem maravilhoso. Vamos lá.</p>
 
@@ -162,7 +164,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[06:22] E ficou legal, gostei. Esse layout é suficiente para o queremos fazer. Então, criamos o HTML do zero, criou o CSS, importou cores, importou a nossa fonte, e agora, vamos partir para o JavaScript.</p>
 
->08. Para saber mais: bordas CSS
+<h2>08. Para saber mais: bordas CSS</h2>
 
 <p>Durante a aula, usamos a propriedade CSS chamada border, para adicionar a borda em volta de um elemento.</p>
 
@@ -172,7 +174,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <h1>Módulo 02. Aplicando a Função Math.random</h1>
 
->02. Numero aleatório com Math.random
+<h2>02. Numero aleatório com Math.random</h2>
 
 <p>[00:00] Agora que já aplicamos fontes e alteramos os estilos da nossa aplicação, do nosso jogo, eu quero começar a dar vida para ele com JavaScript. Vamos lá?</p>
 
