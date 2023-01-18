@@ -227,3 +227,35 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[03:42] E se observarmos, repara que o valor sorteado já vai estar nesse range também. Eu vou salvar entre 100 e 5500, e vou alterar, eu quero entre 1 e 1000, por exemplo, e o range está em 516, 36, 171. Conseguimos fazer com que esse número de maior valor e menor valor seja modificado, com base nessas nossas duas variáveis.</p>
 
 <p>[04:09] Nosso próximo desafio é conseguir manipular o chute da pessoa. E não vamos utilizar um input, vamos utilizar reconhecimento de fala. E é isso que vamos aprender na sequência</p>.
+
+<h2>02. Web speech API</h2>
+
+<p>[00:00] Agora que o nosso projeto já escolhe um número secreto, e o nosso layout visual já está mais legal, o que eu quero fazer é ligar o nosso microfone, para falarmos um valor e o nosso programa reconheça aquilo que estamos falando. Para isso, vamos utilizar uma interface chamada Web Speech API, e eu quero que você abra a documentação junto comigo.</p>
+
+<p>[00:21] Então, vou digitar “web speech api”, e no segundo link dos resultados, “developer.mozilla.org”, “Web Speech API”, uma API de fala. E ele fala algo bem legal sobre essa API. Essa API permite que incorporemos dados de voz em nossos aplicativos web, ou seja, existem duas funcionalidades muito importantes. Existe um que reconhece a fala, que é esse SpeechRecongnition, e tem um capaz de falar aquilo que está lendo, com base nos dados, que é esse SpeechSynthesis.</p>
+
+<p>[00:55] Vamos utilizar apenas o reconhecimento de fala, o primeiro exemplo. Eu até recomendo, que por mais que seja em inglês, que você coloque em um tradutor essa página, e dê uma olhada também, para você entender um pouco mais sobre as propriedades, os parâmetros.</p>
+
+<p>[01:13] E na parte de baixo tem uma parte importante, que eu quero mostrar para vocês, que é a “Browser compatibility”, ou seja, é a compatibilidade dos navegadores. E eu recomendo que você utilize o Chrome para fazer esse reconhecimento de voz. Então, tem todos os navegadores, os que estão mais habilitados a esse tipo de reconhecimento dessa API que vamos utilizar, e o Chrome tem bastante coisa, tem compatibilidade em quase tudo. Então, vamos utilizar o Google Chrome para fazer esse nosso exemplo.</p>
+
+<p>[01:41] E na parte de cima, quando abrimos esse Web Speech API, tem “Para mais detalhes de como utilizar esses recursos, veja Using the Web Speech API”, vou clicar nesse link, e quero você clique junto comigo.</p>
+
+<p>[01:56] “Usando o Web Speech API”, ele fala sobre o reconhecimento de voz, o reconhecimento de fala, ele diz na documentação que é acessado com base no contexto da nossa fala, em uma entrada de áudio, por meio de um serviço de reconhecimento de fala padrão que navegador tem, que essa API fornece para nós, ele vai conseguir identificar exatamente aquilo que estamos falando. Então, na nossa aplicação, no nosso jogo, vou falar um número 850, por exemplo, e ele vai entender e vai colocar aquele número também na tela. E é justamente isso que queremos para a nossa aplicação.</p>
+
+<p>[02:32] Então, como vimos, se “scrollarmos” um pouco para entender como ele usa, ele até tem um exemplo demonstrativo, não vamos investir muito tempo nisso, depois se você quiser dar uma olhada no código também do exemplo. Mais uma vez ele reforça o uso do navegador, então, como eu havia dito anteriormente, o Chrome oferece um suporte a reconhecimento de fala com a maioria das propriedades dessa API.</p>
+
+<p>[02:58] Então, podemos incluí-las no nosso código, para conseguirmos utilizar e alimentar esses objetos. E qualquer implementação futura dessa API de reconhecimento, vamos conseguir oferecer suporte para a nossa aplicação também.</p>
+
+<p>[03:14] Para isso, ele fala que você vai precisar utilizar JavaScript, e vai ter esse suporte do Chrome. E é justamente essa linha que vamos precisar. E eu quero que você preste bastante atenção, porque vamos fazer alguns copy paste. Então, o primeiro que vamos fazer, é para conseguirmos utilizar implementações futuras, e o nosso projeto continue funcionando, vamos copiar as duas primeiras linhas, o var SpeechRecognition = window.SpeechRecongnition || webkitSpeechRecognition;. Então, selecionando e dando um “Ctrl + C”, vamos na nossa aplicação, e vamos criar um local para conseguirmos fazer esse reconhecimento de fala.</p>
+
+<p>[03:54] Então, vou clicar em “app”, e vamos criar um novo aplicativo, porque não queremos colocar o sortearNumero como as configurações de reconhecimento de fala. Então, vou colocar “reconhecimentoDeVoz.js”, e vou colocar as duas linhas que eu copiei aqui dentro dele. Eu vou colocar na frente window também, porque assim que o nosso projeto abrir, assim que a nossa aplicação começar a funcionar, eu já quero ter essa configuração de reconhecimento de voz ativa, então window.SpeechRecognition = window.SpeechRecongnition || webkitSpeechRecognition;.</p>
+
+<p>[04:36] Então, coloquei essa linha, esse nosso código JavaScript ainda não está vinculado com o nosso HTML, vamos precisar fazer isso. Então, no final da página HTML, eu vou colocar script src=”app/reconhecimentoDeVoz.js”></script>, agora temos o reconhecimento de voz já configurado para conseguirmos utilizar.</p>
+
+<p>[04:58] Depois, o que vamos precisar é de uma instância para conseguirmos utilizar esse reconhecimento e controlar as informações. Vamos ver que quando falamos alguma coisa e o microfone liga, existem diversos parâmetros e configurações que podemos utilizar. Para isso, vamos precisar de uma instância, até a documentação fala, que eu acho muito interessante, que é o var recognition = new SpeechRecognition().</p>
+
+<p>[05:22] Então, vou copiar esse linha, vou colocar na linha 3 do nosso código. E no lugar do var, vou colocar uma const, e agora, eu quero começar o reconhecimento de voz. E tem um ponto importante, o reconhecimento de voz, eu quero que seja configurado para a nossa língua padrão, que é o português do Brasil. Então, vou pegar recongnition.lang = ‘pt-Br’, e vou começar o reconhecimento de voz, recognition.start(), escrevam “start” corretamente, porque eu já sofri com isso, não quero que vocês sofram também.</p>
+
+<p>[06:10] Dei um recognition.start(), quando eu volto na nossa aplicação e atualizo, começou um microfone. Se no seu não começou, é só você ir no ícone do microfone e falar que permite que essa aplicação do servidor localhost:5500 tenha acesso ao microfone. Você coloca para permitir, dá um “Done” e ele já está reconhecendo.</p>
+
+<p>[06:30] Estamos com o nosso microfone ligado, mas não estamos vendo nada diferente ainda. Mas o nosso microfone está ligado. Na sequência, vamos aprender como conseguimos pegar as informações que estamos falando, e exibir no console. É isso que vamos ver a seguir.</p>
