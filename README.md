@@ -260,3 +260,15 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[06:10] Dei um recognition.start(), quando eu volto na nossa aplicação e atualizo, começou um microfone. Se no seu não começou, é só você ir no ícone do microfone e falar que permite que essa aplicação do servidor localhost:5500 tenha acesso ao microfone. Você coloca para permitir, dá um “Done” e ele já está reconhecendo.</p>
 
 <p>[06:30] Estamos com o nosso microfone ligado, mas não estamos vendo nada diferente ainda. Mas o nosso microfone está ligado. Na sequência, vamos aprender como conseguimos pegar as informações que estamos falando, e exibir no console. É isso que vamos ver a seguir.</p>
+
+<h2>03. Para saber mais: como funciona a Web Speech API</h2>
+
+<p>A Web Speech API foi lançada no final de 2012, e possibilita que as pessoas desenvolvedoras da Web forneçam recursos de entrada de fala e saída de texto para fala em um navegador da Web. Normalmente, esses recursos não estão disponíveis ao usar o software padrão de reconhecimento de fala ou leitor de tela.</p>
+
+<p>Esta API cuida da privacidade dos usuários. Então, antes de permitir que o site acesse a voz via microfone, o usuário deve conceder permissão declaradamente. O curioso é que a solicitação de permissão é a mesma da API getUserMedia, embora não precise da webcam. Se a página que executa essa API usa o protocolo HTTPS, o navegador solicita a permissão apenas uma vez, caso contrário, sempre vai solicitar quando um novo processo é iniciado.</p>
+
+<p>Outro recurso interessante da Web Speech API é que ela permite especificar um objeto gramatical. Você pode pensar nisso como um conjunto de regras para definir um idioma. A vantagem de usar uma gramática é que ela geralmente leva a melhores resultados devido à restrição das possibilidades da linguagem.</p>
+
+<p>A Web Speech API define uma interface complexa, chamada SpeechRecognition e você poder ler mais sobre ela aqui.</p>
+
+<p>Também recomendo a leitura desse artigo para se aprofundar mais ainda no assunto.</p>
