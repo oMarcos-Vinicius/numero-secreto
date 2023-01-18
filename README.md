@@ -228,6 +228,7 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[04:09] Nosso próximo desafio é conseguir manipular o chute da pessoa. E não vamos utilizar um input, vamos utilizar reconhecimento de fala. E é isso que vamos aprender na sequência</p>.
 
+<h1>Módulo 03: Definindo a voz com webspeech</h1>
 <h2>02. Web speech API</h2>
 
 <p>[00:00] Agora que o nosso projeto já escolhe um número secreto, e o nosso layout visual já está mais legal, o que eu quero fazer é ligar o nosso microfone, para falarmos um valor e o nosso programa reconheça aquilo que estamos falando. Para isso, vamos utilizar uma interface chamada Web Speech API, e eu quero que você abra a documentação junto comigo.</p>
