@@ -272,3 +272,33 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>A Web Speech API define uma interface complexa, chamada SpeechRecognition e você poder ler mais sobre ela aqui.</p>
 
 <p>Também recomendo a leitura desse artigo para se aprofundar mais ainda no assunto.</p>
+
+<h2>04. Exibindo a mensagem no console</h2>
+
+<p>[00:00] Agora que o nosso microfone está ligado quando o nosso programa roda, eu quero pegar essa mensagem que estamos falando, e colocar no console para ser exibido.</p>
+
+<p>[00:10] O que vamos precisar fazer para isso acontecer? Vamos criar um evento, que assim que falamos, vamos exibir a nossa mensagem no console. Para isso, vamos utilizar o recognition.addEventListener(‘result’, onSpeak), ou seja, quando o nosso reconhecimento de voz começar, eu quero pegar tudo que está em result, e vou criar uma função call-back, para que ela seja executada, então, vou chamar de onSpeak.</p>
+
+<p>[00:44] Essa função onSpeak vai exibir tudo que eu estou falando no console. Então, vou criar a função function onSpeak(e) {, quando falarmos, tudo vai estar salvo em algum evento, então, vou passar o valor e, que vai estar salvo, e vou colocar console.log(e).</p>
+
+<p>[01:07] Vou parar de rodar a nossa aplicação, vou falar a palavra “Guilherme”, se você quiser falar o seu nome, também acho que fica legal. Então, vou rodar, vou falar “Guilherme”, e depois vamos ver o que acontece no console. Vamos lá, “Guilherme”.</p>
+
+<p>[01:33] Eu falei “Guilherme” e apareceu esse SpeechRecognitionEvent, um monte de coisas. Quando eu clico para abrir toda essa função, olha o tanto de coisa que tem desse SpeechRecognition, tem um monte de coisas.</p>
+
+<p>[01:50] Nós colocamos no nosso código que queremos o português brasileiro, queremos falar 830 e apareceu realmente o valor 830. Vou fazer de novo, vou falar “Guilherme”, e ele colocou que estamos utilizando o dicionário, a língua oficial como pt-Br, português do Brasil, e tem um monte de coisas.</p>
+
+<p>[02:10] Aonde está o que falamos? Está em results, no plural. Vou clicar nele, temos um array zero, tem outro array zero, que quando eu entro de novo, tem transcript: “Guilherme”.</p>
+
+<p>[02:25] Vou falar outra coisa, vou falar 850, por exemplo. Ele reconheceu alguma coisa, vamos em results, tem o 0 e o 0, e está lá transcript: “850”.</p>
+
+<p>[02:44] O que eu quero fazer é pegar realmente esse 850 e exibir só ele, eu não preciso de todas essas informações e configurações do reconhecimento de fala. Então, primeira coisa que vamos fazer, vai ser pegar realmente só o que está em result. Como fazemos isso?</p>
+
+<p>[03:00] Como estamos no nosso evento, se eu colocar evento.results, no plural, ele vai reconhecer o que eu falei. Ele já mudou, então ele trouxe SpeechRecongnitionResultList, temos um array 0, depois tem outro 0, e depois ele entra nas coisas que eu falei. Ele só reconheceu “aqui ó”, que é o que eu estava falando na hora.</p>
+
+<p>[03:25] Então, eu vou colocar duas arrays 0 para vermos o que acontece. Então console.log(e.results[0][0]), para ele ir acessando. E vou falar “Guilherme”.</p>
+
+<p>[03:37] E quando eu falei, repara que ele trouxe menos propriedades do que antes, estamos diminuindo, e ele trouxe transcript: “Guilherme”. Como eu faço agora, para acessar esse transcript? Não temos mais nenhum array, não precisa acessar nenhum outro elemento. Se eu colocar .transcript, é para ele trazer só o meu nome. Vamos ver.</p>
+
+<p>[03:56] Vou colocar console.log(e.results[0][0].transcript), vou falar “Guilherme”, e ele trouxe só o “Guilherme”. Que legal. Só que “Guilherme” não faz muito sentido para o nosso projeto, porque eu quero adivinhar um número, e não um nome, estávamos chutando o nome. Então, eu vou falar alguns números para testarmos: “558”.</p>
+
+<p>[04:20] Ele trouxe “558”. Vou falar “36”, e ele trouxe também. Está funcionando da forma que queremos. Só que tem um ponto interessante, o número que falamos na nossa aplicação, está sendo exibido no console, só que quando estivermos rodando na nossa aplicação, não vamos olhar no console, não faz muito sentido. Eu quero que esse número apareça embaixo do “Você disse:” que colocamos na nossa aplicação. E é isso que vamos fazer na sequência.</p>
