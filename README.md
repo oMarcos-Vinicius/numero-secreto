@@ -302,3 +302,21 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[03:56] Vou colocar console.log(e.results[0][0].transcript), vou falar “Guilherme”, e ele trouxe só o “Guilherme”. Que legal. Só que “Guilherme” não faz muito sentido para o nosso projeto, porque eu quero adivinhar um número, e não um nome, estávamos chutando o nome. Então, eu vou falar alguns números para testarmos: “558”.</p>
 
 <p>[04:20] Ele trouxe “558”. Vou falar “36”, e ele trouxe também. Está funcionando da forma que queremos. Só que tem um ponto interessante, o número que falamos na nossa aplicação, está sendo exibido no console, só que quando estivermos rodando na nossa aplicação, não vamos olhar no console, não faz muito sentido. Eu quero que esse número apareça embaixo do “Você disse:” que colocamos na nossa aplicação. E é isso que vamos fazer na sequência.</p>
+
+<h2>05. Mostrando a mensagem na tela</h2>
+
+<p>[00:00] Assim que o nosso jogo reconhece a nossa fala, a nossa voz, o nosso chute, ele aparece no console. Mas eu quero que ele apareça na caixa embaixo de “Você disse:”. Vamos lá?</p>
+
+<p>[00:15] Então, para isso, no nosso “index.html”, toda essa parte de <div id=”chute” class=”mensagem”>, <div>Você disse:</div>, e <span class=”box”>20</span>, com a caixa que colocamos no 20, e a mensagem <div>O número secreto é maior <i class=”fa-solid fa-up-long”></i></div>, eu vou comentar essas 3 linhas, vou selecionar “Ctrl + /” ou “command + /”, e elas não vão aparecer mais.</p>
+
+<p>[00:40] O que eu vou fazer agora, vai ser criar uma div falando “Você disse:” e embaixo, a caixa com o valor que falarmos do reconhecimento que fizemos. Para isso, eu vou precisar pegar o ID do chute, então, vamos lá.</p>
+
+<p>[00:55] Na linha 1, vou colocar const elementoChute = document.getElementoById(‘chute’). E agora, repara que quando reconhecemos a mensagem, estamos exibindo ela no console. Vamos deixar esse código um pouco mais claro. Então, vou criar uma variável chute = e.results[0] [0].transcript, e no lugar de exibirmos esse chute no console, eu quero criar uma função para exibir o chute.</p>
+
+<p>[01:37] Então, exibeChuteNaTela(chute). E agora, eu vou criar essa função que exibe o chute na tela. Para isso, vou dar um “Enter”, e vou escrever embaixo function exibeChuteNaTela(chute). Agora que já temos esse elemento chute, o que podemos fazer é inserir nesse elemento chute, e pegar as informações que precisamos. Então, vou falar elementoChute.innerHTML =, eu coloco a crase e dou um “enter”, para conseguir escrever dentro desse elemento.</p>
+
+<p>[02:26] Então, vou primeiro criar <div>Você disse</div>, e embaixo eu vou colocar a nossa tag <span class=”box”>${chute}</span>, e dentro, eu vou precisar passar o chute que vamos pegar do reconhecimento. Como fazemos isso? Eu coloco o sinal de dólar, abre e fecha chaves, e dentro coloco o chute e temos o nosso código já funcionando, ou esperamos que ele funcione. Vamos lá.</p>
+
+<p>[03:14] Vou voltar no código, vou atualizar, e vou falar “8”. E ele mostra “Você disse” e o 8 na caixa embaixo. Vou testar um número bem grande “580”. E ele me mostra “580”. Vou falar o meu nome “Guilherme”, e ele reconheceu.</p>
+
+<p>[03:34] Conseguimos, tiramos do console o que estava aparecendo, conseguimos colocar a palavra ou o número que estamos falando do chute, o que vamos precisar fazer agora é conferir a nossa lógica, porque temos um local em que faz o sorteio do número secreto, vamos precisar comparar se esse valor do chute é igual ao nosso número secreto. Isso vamos ver na sequência.</p>
