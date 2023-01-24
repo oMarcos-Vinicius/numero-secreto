@@ -348,3 +348,34 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[04:37] Como eu vou fazer o retorno dessa função? Eu só preciso do valor verdadeiro ou falso, return numero > maiorValor || numero < menorValor, então, se o número for maior que o maiorValor, ou se o número for menor que o menorValor, vamos ter uma mensagem de erro. Por exemplo, podemos indicar console.log(Valor inválido: o número secreto precisa estar entre ${menor-valor} e ${maiorValor}), eu coloco a crase que assim, conseguimos linkar com esses valores que estamos vendo.</p>
 
 <p>[06:38] Então, vou testar um número maior, vou falar “2000”, e ele deu “Valor inválido: o número secreto precisa estar entre 1 e 1000”. Vou testar um número menor, “-200”. E ele mostra a mesma mensagem. É o que queríamos. O próximo passo é exibir essa mensagem na tela, para ficar mais interativo, e na sequência, verificar quando temos o caso de sucesso de acertar o número secreto.</p>
+
+<h2>03. Acertando o número secreto</h2>
+
+<p>[00:00] Em vez de exibir as mensagens no console, vamos exibir direto na tela? Por exemplo, eu falo “Guilherme”, e ele mostra “Guilherme”, mas mostra “Valor inválido” no console. Eu não quero exibir no console, quero exibir esse conteúdo na tela.</p>
+
+<p>[00:18] Então, primeira coisa que vamos fazer quando fazemos o “reconhecimentoDeVoz.js”, pegamos o elemento do chute, e colocamos nesse elemento </div>Você disse</div>, e a classe </span class=”box”>${chute}</span>. E podemos pegar esse conteúdo “Você disse” com o valor do chute, e colocamos uma mensagem, mais uma div nesse elemento. Vamos fazer isso?</p>
+
+<p>[00:39] Então, já temos aquele elemento que pegamos, então, vou escrever elementoChute.innerHTML += '</div>Valor inválido</div>'. Então, primeira coisa, eu vou passar um valor que não é numérico, “Guilherme”.</p>
+
+<p>[01:09] E ele deu “Valor inválido”, e é isso mesmo que eu queria. Vamos fazer a mesma coisa para o próximo elemento, em vez de exibir o console.log('Valor inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}'), vamos exibir o elementoChute. Então, elementoChute.innerHTML += 'Valor inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}'.</p>
+
+<p>[01:33] Lembrando que precisamos passar isso dentro de uma div, então, vou colocar <div> antes de “Valor inválido”, e no final, fechamos a nossa div também.</p>
+
+<p>[01:45] Então, eu vou falar “2000”, e ele me mostra “Valor inválido: o número secreto precisa estar entre 1 e 1000”. Ou eu posso deixar só “Valor inválido”, por exemplo, posso deixar Valor inválido: Fale um número entre ${menorValor} e ${maiorValor}. Vamos lá.</p>
+
+<p>[02:08] Vou falar “-50”, e ele mostra “Valor inválido: Fale um número entre 1 e 1000”. Ficou legal. Vamos fazer agora, o nosso caso quando acertarmos realmente o número secreto. Então, primeira coisa que faremos é criar uma forma de verificar se o número que convertermos for igual ao número secreto, queremos exibir uma mensagem falando que a pessoa acertou.</p>
+
+<p>[02:32] Então, vou fazer um if (numero === numeroSecreto) {, significa que a pessoa acertou o chute. E eu quero criar uma nova tela, quero tirar a mensagem de “Acerte o número secreto”, e colocar um novo valor. Então, vai ser document.body.innerHTML = `, e vamos passar o nosso conteúdo embaixo. Eu vou passar um '</p>
+<p>
+    
+    Você acertou!</h2<', e embaixo vou colocar '
+    O número secreto era ${numeroSecreto}
+    '`.
+</p>    
+<p>[03:49] Para acertarmos o número secreto, vou precisar do console que estamos exibindo o valor final dele. Então, eu vou em “Console”, vou atualizar a página. Eu falo “162”, e ele me mostra “Você acertou! O número secreto era 162”. Muito legal.</p>
+
+<p>[04:07] Só que esse “Você acertou” ficou muito pequeno, e usamos um h2. Vamos no “style.css” da nossa aplicação só para o deixarmos maior. Então, vou colocar h2 {, e embaixo vou colocar font-size: 4em. E eu volto na aplicação, e falo “877”. E ele me mostra “Você acertou! O número secreto era 877”. Ficou legal, gostei dessa tela.</p>
+
+<p>[04:52] Vou atualizar, vou jogar mais uma vez e vou acertar. Vou falar “802”, ele me mostra a mensagem novamente. Eu gostei, essa tela ficou bem legal. Só que se pararmos para pensar, quando acertamos o número secreto, aparece a mensagem, só que se eu for jogar na raça, sem saber o número secreto, eu falo “500”, e ele me mostra “Você disse 500”, e não aconteceu nada, não apareceu nada.</p>
+
+<p>[05:19] E eu não se qual é o número secreto. Seria legal se continuássemos jogando e exibisse aquela mensagem que tem quando iniciamos o nosso projeto “O número secreto é maior/menor”, para passarmos algumas dicas para a pessoa que está jogando, para ela conseguir acertar. Isso que vamos fazer na sequência.</p>
