@@ -320,3 +320,31 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[03:14] Vou voltar no código, vou atualizar, e vou falar “8”. E ele mostra “Você disse” e o 8 na caixa embaixo. Vou testar um número bem grande “580”. E ele me mostra “580”. Vou falar o meu nome “Guilherme”, e ele reconheceu.</p>
 
 <p>[03:34] Conseguimos, tiramos do console o que estava aparecendo, conseguimos colocar a palavra ou o número que estamos falando do chute, o que vamos precisar fazer agora é conferir a nossa lógica, porque temos um local em que faz o sorteio do número secreto, vamos precisar comparar se esse valor do chute é igual ao nosso número secreto. Isso vamos ver na sequência.</p>
+
+<h1>Módulo 04 - Criando a lógica do jogo</h1>
+
+<h2>02. Validações</h2>
+
+<p>[00:00] Agora que falamos o nosso chute e ele já aparece na tela, eu quero verificar se esse valor que falamos é um valor válido. Então, vamos lá.</p>
+
+<p>[00:10] Primeira coisa que eu vou fazer depois que exibimos o valor na tela, é verificaSeOChutePossuiUmValorValido(chute), isso é uma função que vai fazer umas validações, vai verificar se o tipo é inteiro, se ele está dentro desse range de 1 e 1000.</p>
+
+<p>[00:42] Então, eu não vou criar toda essa validação dentro do reconhecimento de “reconhecimentoDeVoz.js”, eu vou criar um arquivo novo, para manter todas as validações em um único local. Vou criar com “Ctrl + N”, e o arquivo vai se chamar “validacao.js”. E eu vou criar a função que eu acabei de falar function verificaSeOChutePossuiUmValorValido(chute).</p>
+
+<p>[01:06] Primeira coisa, eu quero pegar o valor que recebemos, “42”, e ele traz o “42”. Ele deu um erro, porque eu falei o “42”, e essa função que verifica se possui um valor válido, repara que não colocamos ela ainda no nosso HTML, e vamos precisar fazer isso. Então, script src=”app/validação.js”>/script>.</p>
+
+<p>[01:43] Reparem que a ordem que estamos colocando os nossos scripts também, conforme vamos criando nosso projeto. Então, primeiro sorteou, reconheceu, agora fazemos a validação do número. Então, vou fazer de novo, vou falar o número “42”. Foi para aquela função, e não aconteceu nada, apareceu o “42”.</p>
+
+<p>[01:59] Primeira coisa que eu quero fazer, é pegar esse “42”, transformá-lo em um número inteiro. Então, vou criar um const numero = +chute, que vai transformar o chute que vem em forma de string, em um número inteiro, só de somar, ele já vai tentar converter esse número para inteiro. E podemos começar nossas verificações.</p>
+
+<p>[02:22] Primeira verificação que eu quero ver é se um valor numérico não é not a number, então eu posso fazer if (Number.isNaN(numero)), e se esse número que eu estou passando, for um not a number, esse valor é inválido. Então, vou dar um console.log(‘Valor inválido’). Vamos verificar isso.</p>
+
+<p>[03:05] Eu vou falar “42”, não exibiu nada. Vou falar o meu nome, “Guilherme”, ele pareceu “Guilherme” na tela, e marcou “Valor inválido”, ele não consegue transformar “Guilherme” em um not a number.</p>
+
+<p>[03:20] Além disso, uma coisa que podemos fazer para deixar o nosso código visualmente mais claro, é pegar esses not a number, e transformá-lo em uma função. Então, vou pegar e extrair para uma função global. Vou chamar essa função de if (chuteForInvalido(numero)) {, vou dar um “enter”. Se o chute for inválido, e passamos o valor do número que tentamos converter, retornamos a mensagem de “Valor inválido”.</p>
+
+<p>[03:52] O legal é que conseguimos extrair isso para a nossa função também. Uma outra verificação que podemos fazer, é se o número for maior ou menor do que o permitido dos valores que temos do nosso jogo. Então, eu vou criar uma função if (numeroForMaiorOuMenorQueOValorPermitido(numero)) {, vou criar a função também, function numeroForMaiorOuMenorQueOValorPermitido(numero).</p>
+
+<p>[04:37] Como eu vou fazer o retorno dessa função? Eu só preciso do valor verdadeiro ou falso, return numero > maiorValor || numero < menorValor, então, se o número for maior que o maiorValor, ou se o número for menor que o menorValor, vamos ter uma mensagem de erro. Por exemplo, podemos indicar console.log(Valor inválido: o número secreto precisa estar entre ${menor-valor} e ${maiorValor}), eu coloco a crase que assim, conseguimos linkar com esses valores que estamos vendo.</p>
+
+<p>[06:38] Então, vou testar um número maior, vou falar “2000”, e ele deu “Valor inválido: o número secreto precisa estar entre 1 e 1000”. Vou testar um número menor, “-200”. E ele mostra a mesma mensagem. É o que queríamos. O próximo passo é exibir essa mensagem na tela, para ficar mais interativo, e na sequência, verificar quando temos o caso de sucesso de acertar o número secreto.</p>
