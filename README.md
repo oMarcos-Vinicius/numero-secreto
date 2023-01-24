@@ -353,9 +353,9 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 
 <p>[00:00] Em vez de exibir as mensagens no console, vamos exibir direto na tela? Por exemplo, eu falo “Guilherme”, e ele mostra “Guilherme”, mas mostra “Valor inválido” no console. Eu não quero exibir no console, quero exibir esse conteúdo na tela.</p>
 
-<p>[00:18] Então, primeira coisa que vamos fazer quando fazemos o “reconhecimentoDeVoz.js”, pegamos o elemento do chute, e colocamos nesse elemento </div>Você disse</div>, e a classe </span class=”box”>${chute}</span>. E podemos pegar esse conteúdo “Você disse” com o valor do chute, e colocamos uma mensagem, mais uma div nesse elemento. Vamos fazer isso?</p>
+<p>[00:18] Então, primeira coisa que vamos fazer quando fazemos o “reconhecimentoDeVoz.js”, pegamos o elemento do chute, e colocamos nesse elemento < div>Você disse div>, e a classe < span class=”box”>${chute} span>. E podemos pegar esse conteúdo “Você disse” com o valor do chute, e colocamos uma mensagem, mais uma div nesse elemento. Vamos fazer isso?</p>
 
-<p>[00:39] Então, já temos aquele elemento que pegamos, então, vou escrever elementoChute.innerHTML += '</div>Valor inválido</div>'. Então, primeira coisa, eu vou passar um valor que não é numérico, “Guilherme”.</p>
+<p>[00:39] Então, já temos aquele elemento que pegamos, então, vou escrever elementoChute.innerHTML += '< div>Valor inválido< div>'. Então, primeira coisa, eu vou passar um valor que não é numérico, “Guilherme”.</p>
 
 <p>[01:09] E ele deu “Valor inválido”, e é isso mesmo que eu queria. Vamos fazer a mesma coisa para o próximo elemento, em vez de exibir o console.log('Valor inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}'), vamos exibir o elementoChute. Então, elementoChute.innerHTML += 'Valor inválido: o número secreto precisa estar entre ${menorValor} e ${maiorValor}'.</p>
 
