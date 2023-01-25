@@ -23,3 +23,10 @@ function exibeChuteNaTela(chute) {
 recognition.addEventListener('end', () => {
     recognition.start();
 })
+
+recognition.addEventListener('click', e => {
+    console.log(e)
+    if (e.target.id == 'jogar-novamente') {
+        window.location.reload();
+    }
+})
