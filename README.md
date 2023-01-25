@@ -401,3 +401,25 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[03:57] Vou tentar acertar na raça agora, sem saber o número secreto. Vou falar “500”, e ele me diz que o número secreto é menor. Eu falo “250”, e ele me diz que é menor. Eu falo “100”, ele me diz que é menor. Eu falo “50”, ele me diz que é maior. Eu falo “70”, ele me diz que é maior. Eu falo “80”, ele me diz que é menor. Eu falo “75”, e ele me diz que é maior. Eu falo “76”, ele me diz que é maior. Eu falo “78”, e ele me mostra “Você acertou! O número secreto era 78”. Se eu quero jogar de novo, é só atualizar a página, e eu começo a jogar o nosso jogo novamente.</p>
 
 <p>[04:33] Dessa forma ficou bem mais interativo, e agora, eu passo o desafio para você. Chame as pessoas da sua casa para elas jogarem e testarem o jogo junto com você, para ver se está tudo certo. E na sequência, vou mostrar umas coisas bem legais para publicarmos o nosso jogo, inserir uns botões e deixá-lo ainda mais legal.</p>
+
+<h1>05. Publicando e compartilhando</>
+
+<h2>02. Criando o botão jogar novamente</h2>
+
+<p>[00:00] Quando acertamos o número secreto aparece a mensagem “Você acertou! O número secreto era 793”, só que para eu conseguir jogar o jogo novamente, eu preciso atualizar a página, e isso é um pouco ruim. Que tal criarmos um botão embaixo, que clicamos nele, ele atualiza a página, já sorteia um novo número e já começa um novo jogo mais uma vez, para não precisar ficarmos atualizando na parte de cima? Então, vamos fazer isso, criar um botão na tela em que acertamos.</p>
+
+<p>[00:28] Para isso, vamos no nosso “validacao.js”, e ele tem if (numero === numeroSecreto), ele dá uma mensagem, e eu vou colocar um botão, então vou escrever < button id=”jogar-novamente” class=”btn-jogar”>Jogar novamente</ button>, e eu quero um ID, para eu conseguir manipular o lado do JavaScript, e vou passar uma classe para estilizarmos esse botão com CSS, e vou passar como nome do botão “Jogar novamente”.</p>
+
+<p>[01:22] Vamos ver como está a cara desse botão. Vou atualizar a página, e vou acertar o número, “791”. Ele mostra a mensagem de que eu acertei, e tem o botão de jogar novamente, mas quando eu clico, não acontece nada. Antes de darmos vida para esse botão, vamos deixá-lo mais bonito.</p>
+
+<p>[01:47] Então, eu vou no “style.css”, vamos criar a nossa classe .btn-jogar{, e vamos deixar esse botão bem bonito. Primeira coisa que eu vou fazer, vai ser colocar um padding: 8px 15px;, para ele ficar bem bonito. Além disso, eu não quero que tenha a marcação da borda nele, então border: 0, para ele não ficar colocando o valor para a borda. E vou colocar uma cor para ele background: var(--primary-color);. Além disso, vou colocar um border-radius: 5px:, e vou dar uma margem superior, que ele ficou grudado, então margin-top: 20px;.</p>
+
+<p>[02:47] Ficou bem melhor, acho que já está mais agradável. Então, agora, queremos clicar nesse botão, e que alguma coisa realmente aconteça com ele. Se você quiser estilizar esse botão para deixar com a sua cara também, fique à vontade, pode mexer e deixar com a sua identidade.</p>
+
+<p>[03:06] Vamos lá. Para deixar esse botão funcionando, vamos na nossa função de “validacao.js”, embaixo eu vou colocar um código para conseguirmos reiniciar o nosso jogo, atualizar a nossa página, quando clicar nesse botão.</p>
+
+<p>[03:23] Para isso, eu vou precisar acessar o document.body.addEventListener(‘click’, e => {, então, quando eu clicar, eu quero que alguma coisa aconteça. Vou utilizar um evento, e embaixo vamos colocar as nossas funções, então vou falar que se eu tiver um clique no botão “Jogar novamente”, como eu consigo acessar aquele botão? Posso usar if (e.target.id == ‘jogar-novamente’) {, então, se eu tiver um clique no ID que seja igual ao jogar-novamente, eu quero reiniciar a minha tela, então, eu coloco window.location.reload().</p>
+
+<p>[04:20] Vamos testar isso? Eu vou acertar o número, “642”, e vou clicar no “Jogar novamente”. Eu falo “269”, ele me mostra a mensagem que acertei. E agora, eu vou errar, o número secreto é 364, eu vou falar “500”, ele me diz que é um número menor. Eu falo “360”, ele me fala que é um número maior. Eu falo “365”, ele me fala que é um número menor. Eu falo “364”, ele me mostra que eu acertei. Clico em “Jogar novamente”.</p>
+
+<p>[04:48] O número secreto é o 781, eu falo “781”, e ele me mostra que acertei. E o nosso jogo está muito incrível, ficou muito legal, ficou muito bonito mesmo. O que vamos fazer na sequência, é colocar isso no ar, para que o mundo jogue aquilo que criamos e desenvolvemos.</p>
