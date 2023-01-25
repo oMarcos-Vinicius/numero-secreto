@@ -379,3 +379,25 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[04:52] Vou atualizar, vou jogar mais uma vez e vou acertar. Vou falar “802”, ele me mostra a mensagem novamente. Eu gostei, essa tela ficou bem legal. Só que se pararmos para pensar, quando acertamos o número secreto, aparece a mensagem, só que se eu for jogar na raça, sem saber o número secreto, eu falo “500”, e ele me mostra “Você disse 500”, e não aconteceu nada, não apareceu nada.</p>
 
 <p>[05:19] E eu não se qual é o número secreto. Seria legal se continuássemos jogando e exibisse aquela mensagem que tem quando iniciamos o nosso projeto “O número secreto é maior/menor”, para passarmos algumas dicas para a pessoa que está jogando, para ela conseguir acertar. Isso que vamos fazer na sequência.</p>
+
+<h2>04 Criando as dicas</h2>
+
+<p>[00:00] Criamos uma função que verifica se o chute possui um valor válido, e fazemos algumas coisas. Se o chute for inválido, se falamos uma palavra, por exemplo, exibimos uma mensagem na tela como “Valor inválido”. E para conseguirmos passar uma informação falando que o valor é inválido e para ele não executar mais nada dessa função elementoChute.innertHTML += '< div>Valor inválido</ div>', eu vou dar um “Enter” e passar um return, e essa função não vai ser mais invocada.</p>
+
+<p>[00:28] A mesma coisa se o número for maior ou menor que o valor permitido. Se eu chutei um número muito maior ou muito menor, quero passar um return, para que ele não execute mais nada dessa função.</p>
+
+<p>[00:40] Tem um ponto interessante agora, se for um número, e esse número estiver dentro do range, por exemplo, é um número entre 1 e 1000, e eu falei “500”, por exemplo, mas eu errei, o número secreto é “600”, ele vai passar algumas dicas falando que o número secreto é maior ou menor, assim como temos uma < div>O número secreto é maior < i class=”fa-solid fa-up-long”></ i>< /div>, falando que o número é maior ou menor, com a seta para cima ou para baixo.</p>
+
+<p>[01:12] Então, se o número for válido, mas ele não for igual ao número secreto, vou passar um else if (numero > numeroSecreto), eu quero exibir uma mensagem na tela. Então, vou pegar o nosso elementoChute.innerHTML += ', e vou passar um valor para ele. Vou passar exatamente aquela div, vou copiar a linha 20, que deixamos comentada no nosso projeto, < div>O número secreto é maior < i class=”fa-solid fa-up-long”>< /i>< /div>.</p>
+
+<p>[01:57] Vou colar essa div, só que é o oposto, se o número for maior do que o número secreto, o meu chute for maior, então, eu tenho falar que o número secreto é menor, então <div>O número secreto é menor <i class=”fa-solid fa-down-long”></i></div>. E se não for maior, só sobrou um caso, que é o caso de menor, então vou copiar todo o elementoChute, vou colar embaixo do else, e vou falar uma <div>O número secreto é maior < i class=”fa-solid fa-up-long”>< /i></ div>.</p>
+
+<p>[02:34] Vamos testar isso para ver como ficou? Vou atualizar, e vou chutar um número maior, “500”. Eu falei “500”, e ele falou “O número secreto é menor”, porque é 369. Eu vou chutar agora um número menor, “2”, e ele falou “O número secreto é maior”.</p>
+
+<p>[02:57] Só tem um ponto que está meio triste, porque quando falamos um número maior ou menor, só que o jogo acaba, ele nem fica mais mostrando o microfone. E seria legal se ele continuasse reconhecendo a voz até eu acertar, até exibir a mensagem que eu acertei o número secreto. Para isso, vamos no nosso código de reconhecimento de voz, e vamos adicionar mais um evento nele.</p>
+
+<p>[03:22] Então, vou colocar embaixo da nossa função recognition.addEventListener(‘end’), () => recognition.start()), ou seja, quando ele acabar, eu quero fazer alguma coisa. Eu vou chamar uma função anônima, e vou chamar de recognition.start(). Ou seja, quando a nossa função acabar, ele liga mais uma vez o reconhecimento de voz, para ficarmos descobrindo o número que é. Então, vamos lá.</p>
+
+<p>[03:57] Vou tentar acertar na raça agora, sem saber o número secreto. Vou falar “500”, e ele me diz que o número secreto é menor. Eu falo “250”, e ele me diz que é menor. Eu falo “100”, ele me diz que é menor. Eu falo “50”, ele me diz que é maior. Eu falo “70”, ele me diz que é maior. Eu falo “80”, ele me diz que é menor. Eu falo “75”, e ele me diz que é maior. Eu falo “76”, ele me diz que é maior. Eu falo “78”, e ele me mostra “Você acertou! O número secreto era 78”. Se eu quero jogar de novo, é só atualizar a página, e eu começo a jogar o nosso jogo novamente.</p>
+
+<p>[04:33] Dessa forma ficou bem mais interativo, e agora, eu passo o desafio para você. Chame as pessoas da sua casa para elas jogarem e testarem o jogo junto com você, para ver se está tudo certo. E na sequência, vou mostrar umas coisas bem legais para publicarmos o nosso jogo, inserir uns botões e deixá-lo ainda mais legal.</p>
