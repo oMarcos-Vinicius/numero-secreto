@@ -9,6 +9,7 @@ recognition.addEventListener('result', onSpeak);
 
 function onSpeak(e) {
     chute = e.results[0][0].transcript
+    console.log(chute)
     exibeChuteNaTela(chute);
     verificaSeOChutePossuiUmValorValido(chute);
 }
@@ -22,11 +23,4 @@ function exibeChuteNaTela(chute) {
 
 recognition.addEventListener('end', () => {
     recognition.start();
-})
-
-recognition.addEventListener('click', e => {
-    console.log(e)
-    if (e.target.id == 'jogar-novamente') {
-        window.location.reload();
-    }
 })

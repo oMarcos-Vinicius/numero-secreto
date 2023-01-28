@@ -3,6 +3,7 @@
     --font-family: 'Montserrat', sans-serif;
     --bg-color: #52734D;
     --primary-color: #FEFFDE;
+    --bg-color-gameover: #FF5D5D;
 }
 
 body {
@@ -42,13 +43,12 @@ h3 {
     display: inline-block;
     margin: 10px;
     padding: 10px;
-    background-color: #91C788;
     border-radius: 15px;
 }
 
 .btn-jogar {
     padding: 8px;
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     border-radius: 5px;

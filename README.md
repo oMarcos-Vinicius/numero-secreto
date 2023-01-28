@@ -423,3 +423,13 @@ Aprendendo consumo de API de reconhecimento de voz | Alura.com
 <p>[04:20] Vamos testar isso? Eu vou acertar o número, “642”, e vou clicar no “Jogar novamente”. Eu falo “269”, ele me mostra a mensagem que acertei. E agora, eu vou errar, o número secreto é 364, eu vou falar “500”, ele me diz que é um número menor. Eu falo “360”, ele me fala que é um número maior. Eu falo “365”, ele me fala que é um número menor. Eu falo “364”, ele me mostra que eu acertei. Clico em “Jogar novamente”.</p>
 
 <p>[04:48] O número secreto é o 781, eu falo “781”, e ele me mostra que acertei. E o nosso jogo está muito incrível, ficou muito legal, ficou muito bonito mesmo. O que vamos fazer na sequência, é colocar isso no ar, para que o mundo jogue aquilo que criamos e desenvolvemos.</p>
+
+<h2>05. Desafio: Game Over</h2>
+
+<p>Sabemos como validar um número e nosso jogo está funcionando da forma que planejamos. Porém o nosso jogo só termina quando alguém acerta o número secreto.</p>
+
+<p>Vamos criar uma tela de fim de jogo com a mensagem GAME OVER e alterar a cor de fundo, tudo isso pelo comando de voz?</p>
+
+<p>Mas não se esqueça de incluir o botão jogar novamente!</p>
+
+<p>Dica: quando alguém falar GAME OVER o jogo termina.</p>
